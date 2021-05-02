@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>resor/background.jpg</file>
+        <file>resor/Logo.png</file>
+        <file>resor/pic.ico</file>
+        <file>resor/point.png</file>
+        <file>resor/start.png</file>
+        <file>resor/startscene.jpg</file>
+        <file>resor/myplane.png</file>
+        <file>resor/bullet.png</file>
+        <file>resor/bomb-1.png</file>
+        <file>resor/bomb-2.png</file>
+        <file>resor/bomb-3.png</file>
+        <file>resor/bomb-4.png</file>
+        <file>resor/bomb-5.png</file>
+        <file>resor/bomb-6.png</file>
+        <file>resor/bomb-7.png</file>
+        <file>resor/bomb-8.png</file>
+        <file>resor/enemy.png</file>
+    </qresource>
+</RCC>
