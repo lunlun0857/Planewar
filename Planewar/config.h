@@ -20,6 +20,8 @@
 
 /************◊”èó≈‰÷√îµì˛************/
 #define BULLET_PATH ":/new/prefix1/resor/bullet.png"
-#define BULLET_SPEED 5;
+#define BULLET_SPEED 5
+#define BULLET_NUM 30
+#define BULLET_INTERVAL 20
 
 #endif // !CONFIG_H

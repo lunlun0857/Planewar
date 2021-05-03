@@ -1,5 +1,7 @@
 #include <qpixmap.h>
 #include <qrect.h>
+#include "bullet.h"
+#include "config.h"
 
 class Myplane
 {
@@ -20,5 +22,13 @@ public:
 
 	//ïw™CµÄ¾ØĞÎß…¿ò
 	QRect m_Rect;
+
+	//—Ï»
+	Bullet m_bullets[BULLET_NUM];
+
+	//°lÉäég¸ô
+	int m_recorder;
 };
+
+
 

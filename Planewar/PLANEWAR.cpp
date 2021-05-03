@@ -48,6 +48,18 @@ void PLANEWAR::updatePosition()
     //更新地圖座標
     m_map.mapPosition();
 
+    //發射子彈
+    m_plane.shoot();
+
+    //計算所有非空閒子彈當前座標
+    for (int i = 0; i < BULLET_NUM; i++) {
+        //如果非空閒
+        if (m_plane.m_bullets[i].m_Free == false) {
+            m_plane.m_bullets[i].updatePosition();
+        }
+    }
+
+
 }
 
 void PLANEWAR::paintEvent(QPaintEvent*)
@@ -60,6 +72,14 @@ void PLANEWAR::paintEvent(QPaintEvent*)
 
     //繪製英雄飛機
     painter.drawPixmap(m_plane.m_X, m_plane.m_Y, m_plane.m_Plane);
+
+    //繪製子彈
+    for (int i = 0; i < BULLET_NUM; i++) {
+        //如果非空閒，繪製
+        if (m_plane.m_bullets[i].m_Free == false) {
+            painter.drawPixmap(m_plane.m_bullets[i].m_X, m_plane.m_bullets[i].m_Y, m_plane.m_bullets[i].m_Bullet);
+        }
+    }
 }
 
 void PLANEWAR::mouseMoveEvent(QMouseEvent* event)
