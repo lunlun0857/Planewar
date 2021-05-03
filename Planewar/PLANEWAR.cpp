@@ -67,5 +67,5 @@ void PLANEWAR::mouseMoveEvent(QMouseEvent* event)
     int x = event->x();
     int y = event->y();
 
-    m_plane.setPosition(x, y);
+    m_plane.setPosition(x - 60, y - 45);
 }

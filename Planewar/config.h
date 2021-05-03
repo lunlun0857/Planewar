@@ -18,4 +18,8 @@
 /************ïw™CÅäÖÃ”µ“ş************/
 #define MYPLANE_PATH ":/new/prefix1/resor/myplane.png"
 
+/************×Ó—ÅäÖÃ”µ“ş************/
+#define BULLET_PATH ":/new/prefix1/resor/bullet.png"
+#define BULLET_SPEED 5;
+
 #endif // !CONFIG_H

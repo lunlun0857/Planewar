@@ -89,12 +89,14 @@
     <QtRcc Include="res.qrc" />
     <QtUic Include="PLANEWAR.ui" />
     <QtMoc Include="PLANEWAR.h" />
+    <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Myplane.cpp" />
     <ClCompile Include="PLANEWAR.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bullet.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Myplane.h" />
