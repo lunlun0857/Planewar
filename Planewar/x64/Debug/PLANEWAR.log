@@ -1,5 +1,6 @@
-﻿  Map.cpp
-  Myplane.cpp
-  PLANEWAR.cpp
-  main.cpp
+﻿  Reading Qt configuration (D:/QT/5.14.2/msvc2017_64/bin/qmake)
+  moc PLANEWAR.h
+  moc_PLANEWAR.cpp
+  qrc_res.cpp
+  LINK : 没有找到 D:\C++\Planewar\x64\Debug\PLANEWAR.exe 或上一个增量链接没有生成它；正在执行完全链接
   PLANEWAR.vcxproj -> D:\C++\Planewar\x64\Debug\PLANEWAR.exe
