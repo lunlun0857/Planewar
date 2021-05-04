@@ -28,7 +28,13 @@
 #define ENEMY_PATH ":/new/prefix1/resor/enemy1.png"
 #define ENEMY_SPEED 3
 #define ENEMY_NUM 20
-#define ENEMY_INTERVAL 80
+#define ENEMY_INTERVAL 50
+
+/************±¨’®≈‰÷√îµì˛************/
+#define EXPLODE_PATH ":/new/prefix1/resor/bomb-%1.png"
+#define EXPLODE_NUM 20
+#define EXPLODE_MAX 8
+#define EXPLODE_INTERVAL 15
 
 
 

@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "Myplane.h"
 #include "enemy.h"
+#include "explode.h"
 
 
 class PLANEWAR : public QWidget
@@ -46,6 +47,10 @@ public:
 
     //¶¨•rÆ÷
     QTimer m_Timer;
+
+    //±¬Õ¨”µ½M
+    explode m_bombs[EXPLODE_NUM];
+
 private:
     Ui::PLANEWARClass ui;
 };

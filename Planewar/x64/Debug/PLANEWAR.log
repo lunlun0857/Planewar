@@ -1,3 +1,9 @@
-﻿  PLANEWAR.cpp
+﻿  Map.cpp
+  Myplane.cpp
+  PLANEWAR.cpp
+  bullet.cpp
+  enemy.cpp
+  explode.cpp
+  main.cpp
   moc_PLANEWAR.cpp
   PLANEWAR.vcxproj -> D:\C++\Planewar\x64\Debug\PLANEWAR.exe

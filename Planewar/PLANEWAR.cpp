@@ -81,6 +81,13 @@ void PLANEWAR::updatePosition()
             m_enemys[i].updatePosition();
         }
     }
+
+    //計算爆炸的播放圖
+    for (int i = 0; i < EXPLODE_NUM; i++) {
+        if (m_bombs[i].m_Free == false) {
+            m_bombs[i].updateInfo();
+        }
+    }
 }
 
 void PLANEWAR::paintEvent(QPaintEvent*)
@@ -106,6 +113,13 @@ void PLANEWAR::paintEvent(QPaintEvent*)
     for (int i = 0; i < ENEMY_NUM; i++) {
         if (m_enemys[i].m_Free == false) {
             painter.drawPixmap(m_enemys[i].m_X, m_enemys[i].m_Y, m_enemys[i].m_enemy);
+        }
+    }
+
+    //繪製爆炸
+    for (int i = 0; i < EXPLODE_NUM; i++) {
+        if (m_bombs[i].m_Free == false) {
+            painter.drawPixmap(m_bombs[i].m_X, m_bombs[i].m_Y, m_bombs[i].m_pixArr[m_bombs[i].m_index]);
         }
     }
 }
@@ -153,15 +167,25 @@ void PLANEWAR::collisionDetection()
             if (m_plane.m_bullets[j].m_Free) {
                 continue;
             }
-
+            //飛機子彈皆非空閒
             if (m_enemys[i].m_Rect.intersects(m_plane.m_bullets[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_bullets[j].m_Free = true;
+
+                //播放爆炸效果
+                for (int k = 0; k < EXPLODE_NUM; k++) {
+                    if (m_bombs[k].m_Free) {
+
+                        m_bombs[k].m_Free = false;
+
+                        m_bombs[k].m_X = m_enemys[i].m_X;
+                        m_bombs[k].m_Y = m_enemys[i].m_Y;
+                        break;
+                    }
+                }
             }
         }
     }
-
-    //飛機子彈皆非空閒
 
 
 }

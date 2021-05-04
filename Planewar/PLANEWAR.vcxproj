@@ -91,6 +91,7 @@
     <QtMoc Include="PLANEWAR.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="explode.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Myplane.cpp" />
     <ClCompile Include="PLANEWAR.cpp" />
@@ -100,6 +101,7 @@
     <ClInclude Include="bullet.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="explode.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Myplane.h" />
   </ItemGroup>
