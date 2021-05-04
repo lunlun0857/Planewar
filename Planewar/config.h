@@ -26,9 +26,9 @@
 
 /************”³™CÅäÖÃ”µ“þ************/
 #define ENEMY_PATH ":/new/prefix1/resor/enemy1.png"
-#define ENEMY_SPEED 5
+#define ENEMY_SPEED 3
 #define ENEMY_NUM 20
-#define ENEMY_INTERVAL 30
+#define ENEMY_INTERVAL 80
 
 
 

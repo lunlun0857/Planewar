@@ -29,6 +29,9 @@ public:
     //”³™C³öˆö
     void enemyToScene();
 
+    //Åö×²™zœy
+    void collisionDetection();
+
     //”³™C”µ½M
     Enemy m_enemys[ENEMY_NUM];
 

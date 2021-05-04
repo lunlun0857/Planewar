@@ -53,6 +53,9 @@ void PLANEWAR::playgame()
 
         //繪製到屏幕中
         update();
+
+        //碰撞檢測
+        collisionDetection();
     });
 }
 
@@ -136,4 +139,29 @@ void PLANEWAR::enemyToScene()
             break;
         }
     }
+}
+
+void PLANEWAR::collisionDetection()
+{
+    
+    for (int i = 0; i < ENEMY_NUM; i++) {
+        if (m_enemys[i].m_Free) {
+            continue;
+        }
+
+        for (int j = 0; j < BULLET_NUM; j++) {
+            if (m_plane.m_bullets[j].m_Free) {
+                continue;
+            }
+
+            if (m_enemys[i].m_Rect.intersects(m_plane.m_bullets[j].m_Rect)) {
+                m_enemys[i].m_Free = true;
+                m_plane.m_bullets[j].m_Free = true;
+            }
+        }
+    }
+
+    //飛機子彈皆非空閒
+
+
 }
