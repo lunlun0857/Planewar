@@ -6,7 +6,7 @@ Bullet::Bullet()
     m_Bullet.load(BULLET_PATH);
 
     //子彈坐標初始化
-    m_X = GAME_WIDTH * 0.5 - m_Bullet.width() * 0.5;
+    m_X = (GAME_WIDTH * 0.5 - m_Bullet.width() * 0.5);
     m_Y = GAME_HEIGHT;
 
     //子彈空閒狀態

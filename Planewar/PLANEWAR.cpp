@@ -3,6 +3,7 @@
 #include <qicon.h>
 #include <qpainter.h>
 #include <QMouseEvent>
+#include <ctime>
 
 PLANEWAR::PLANEWAR(QWidget *parent)
     : QWidget(parent)
@@ -27,6 +28,13 @@ void PLANEWAR::initScene()
 
     //定時器設置
     m_Timer.setInterval(GAME_RATE);
+
+    //敵機出場時間隔 初始化
+    m_recorder = 0;
+
+    //隨機數種子
+    srand((unsigned int)time(NULL));
+
 }
 
 void PLANEWAR::playgame()
@@ -36,8 +44,13 @@ void PLANEWAR::playgame()
 
     //監聽定時器發送的信號
     connect(&m_Timer, &QTimer::timeout, [=]() {
+
+        //敵機出場
+        enemyToScene();
+
         //更新遊戲中元素的座標
         updatePosition();
+
         //繪製到屏幕中
         update();
     });
@@ -59,7 +72,12 @@ void PLANEWAR::updatePosition()
         }
     }
 
-
+    //敵機出場
+    for (int i = 0; i < ENEMY_NUM; i++) {
+        if (m_enemys[i].m_Free == false) {
+            m_enemys[i].updatePosition();
+        }
+    }
 }
 
 void PLANEWAR::paintEvent(QPaintEvent*)
@@ -80,6 +98,13 @@ void PLANEWAR::paintEvent(QPaintEvent*)
             painter.drawPixmap(m_plane.m_bullets[i].m_X, m_plane.m_bullets[i].m_Y, m_plane.m_bullets[i].m_Bullet);
         }
     }
+
+    //繪製敵機
+    for (int i = 0; i < ENEMY_NUM; i++) {
+        if (m_enemys[i].m_Free == false) {
+            painter.drawPixmap(m_enemys[i].m_X, m_enemys[i].m_Y, m_enemys[i].m_enemy);
+        }
+    }
 }
 
 void PLANEWAR::mouseMoveEvent(QMouseEvent* event)
@@ -88,4 +113,27 @@ void PLANEWAR::mouseMoveEvent(QMouseEvent* event)
     int y = event->y();
 
     m_plane.setPosition(x - 60, y - 45);
+}
+
+void PLANEWAR::enemyToScene()
+{
+    m_recorder++;
+
+    if (m_recorder < ENEMY_INTERVAL) {
+        return;
+    }
+
+    m_recorder = 0;
+
+    for (int i = 0; i < ENEMY_NUM; i++) {
+        //若空閒則出場
+        if (m_enemys[i].m_Free) {
+            m_enemys[i].m_Free = false;
+
+            //座標
+            m_enemys[i].m_X = rand() % (GAME_WIDTH - m_enemys[i].m_Rect.width());
+            m_enemys[i].m_Y = -m_enemys[i].m_Rect.height();
+            break;
+        }
+    }
 }

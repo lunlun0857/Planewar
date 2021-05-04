@@ -37,7 +37,7 @@ void Myplane::shoot() {
 			m_bullets[i].m_Free = false;
 
 			//ÔOÖÃ×Ó—×ù˜Ë
-			m_bullets[i].m_X = m_X;
+			m_bullets[i].m_X = m_X + 45;
 			m_bullets[i].m_Y = m_Y;
 			break;
 		}

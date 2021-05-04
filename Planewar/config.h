@@ -24,4 +24,12 @@
 #define BULLET_NUM 30
 #define BULLET_INTERVAL 20
 
+/************”³™CÅäÖÃ”µ“þ************/
+#define ENEMY_PATH ":/new/prefix1/resor/enemy1.png"
+#define ENEMY_SPEED 5
+#define ENEMY_NUM 20
+#define ENEMY_INTERVAL 30
+
+
+
 #endif // !CONFIG_H

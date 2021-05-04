@@ -3,6 +3,7 @@
 #include<qtimer.h>
 #include "Map.h"
 #include "Myplane.h"
+#include "enemy.h"
 
 
 class PLANEWAR : public QWidget
@@ -24,6 +25,15 @@ public:
 
     //鼠標移動
     void mouseMoveEvent(QMouseEvent*);
+
+    //敵機出場
+    void enemyToScene();
+
+    //敵機數組
+    Enemy m_enemys[ENEMY_NUM];
+
+    //敵機出場間隔紀錄
+    int m_recorder;
 
     //地圖對象
     Map m_map;

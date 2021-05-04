@@ -16,6 +16,6 @@
         <file>resor/bomb-6.png</file>
         <file>resor/bomb-7.png</file>
         <file>resor/bomb-8.png</file>
-        <file>resor/enemy.png</file>
+		<file>resor/enemy1.png</file>
     </qresource>
 </RCC>
