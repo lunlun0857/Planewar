@@ -1,9 +1,11 @@
-#include "PLANEWAR.h"
+#include "Planewar.h"
 #include "config.h"
 #include <qicon.h>
 #include <qpainter.h>
 #include <QMouseEvent>
 #include <ctime>
+#include <qsound.h>
+
 
 PLANEWAR::PLANEWAR(QWidget *parent)
     : QWidget(parent)
@@ -39,6 +41,10 @@ void PLANEWAR::initScene()
 
 void PLANEWAR::playgame()
 {
+    //†¢„Ó±³¾°Òô˜·
+    QSound::play(SOUND_BG);
+
+
     //†¢„Ó¶¨•rÆ÷
     m_Timer.start();
 
@@ -175,6 +181,8 @@ void PLANEWAR::collisionDetection()
                 //²¥·Å±¬Õ¨Ð§¹û
                 for (int k = 0; k < EXPLODE_NUM; k++) {
                     if (m_bombs[k].m_Free) {
+
+                        QSound::play(SOUND_BOMB);
 
                         m_bombs[k].m_Free = false;
 

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ADC19F50-C303-424D-B791-E1B633556A75}</ProjectGuid>
+    <ProjectGuid>{44B49C5E-303F-488B-9F79-02428E74B258}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
@@ -32,7 +32,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>D:_QT_5.14.2_msvc2017_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;widgets;multimediawidgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -85,16 +85,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="PLANEWAR.qrc" />
-    <QtRcc Include="res.qrc" />
-    <QtUic Include="PLANEWAR.ui" />
-    <QtMoc Include="PLANEWAR.h" />
+    <QtUic Include="Planewar.ui" />
+    <QtMoc Include="Planewar.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="explode.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Myplane.cpp" />
-    <ClCompile Include="PLANEWAR.cpp" />
+    <ClCompile Include="Planewar.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

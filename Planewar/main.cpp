@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     
     //Ô]ƒÔ¶þßMÖÆÙYÔ´
-    QResource::registerResource("GAME_RES_PATH");
+    QResource::registerResource(GAME_RES_PATH);
 
     PLANEWAR w;
     w.show();

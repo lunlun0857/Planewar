@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'PLANEWAR.ui'
+** Form generated from reading UI file 'Planewar.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.14.2
 **

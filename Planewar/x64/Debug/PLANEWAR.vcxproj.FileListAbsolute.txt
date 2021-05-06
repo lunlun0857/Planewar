@@ -1,1 +1,3 @@
-D:\C++\PLANEWAR\x64\Debug\PLANEWAR.exe
+D:\程序\Planewar\x64\Debug\Planewar.exe
+D:\Code\Planewar\x64\Debug\Planewar.exe
+D:\C++\Planewar\x64\Debug\Planewar.exe

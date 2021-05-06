@@ -23,30 +23,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="PLANEWAR.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtUic Include="PLANEWAR.ui">
+    <QtUic Include="Planewar.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="PLANEWAR.h">
+    <QtMoc Include="Planewar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClCompile Include="PLANEWAR.cpp">
+    <ClCompile Include="Planewar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <QtRcc Include="res.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
+    <ClCompile Include="Myplane.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Myplane.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="bullet.cpp">
@@ -60,22 +54,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Myplane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="explode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
