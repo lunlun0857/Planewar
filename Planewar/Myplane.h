@@ -2,6 +2,8 @@
 #include <qrect.h>
 #include "bullet.h"
 #include "config.h"
+#include "roc.h"
+#include "roc2.h"
 
 class Myplane
 {
@@ -9,7 +11,9 @@ public:
 	Myplane();
 
 	//∞l…‰◊”èó
-	void shoot();
+	void shootb();
+	void shootr1();
+	void shootr2();
 
 	//‘O÷√ÔwôCŒª÷√
 	void setPosition(int x, int y);
@@ -25,9 +29,13 @@ public:
 
 	//èóœª
 	Bullet m_bullets[BULLET_NUM];
+	roc m_rocs[ROC_NUM];
+	roc2 m_rocs2[ROC_NUM];
 
 	//∞l…‰Èg∏Ù
-	int m_recorder;
+	int m_brecorder;
+	int m_rrecorder;
+	int m_r2recorder;
 };
 
 

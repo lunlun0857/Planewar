@@ -23,9 +23,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Planewar.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtMoc Include="Planewar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -52,6 +49,12 @@
     <ClCompile Include="explode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="roc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="roc2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Myplane.h">
@@ -72,5 +75,16 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="roc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="roc2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Planewar.ui">
+      <Filter>Form Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

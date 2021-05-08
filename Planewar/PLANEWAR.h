@@ -1,5 +1,4 @@
 #include <QtWidgets/QWidget>
-#include "ui_PLANEWAR.h"
 #include<qtimer.h>
 #include "Map.h"
 #include "Myplane.h"
@@ -50,7 +49,4 @@ public:
 
     //±¬Õ¨”µ½M
     explode m_bombs[EXPLODE_NUM];
-
-private:
-    Ui::PLANEWARClass ui;
 };

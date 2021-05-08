@@ -71,13 +71,29 @@ void PLANEWAR::updatePosition()
     m_map.mapPosition();
 
     //發射子彈
-    m_plane.shoot();
+    m_plane.shootb();
+    m_plane.shootr1();
+    m_plane.shootr2();
 
     //計算所有非空閒子彈當前座標
     for (int i = 0; i < BULLET_NUM; i++) {
         //如果非空閒
         if (m_plane.m_bullets[i].m_Free == false) {
             m_plane.m_bullets[i].updatePosition();
+        }
+    }
+
+    for (int i = 0; i < ROC_NUM; i++) {
+        //如果非空閒
+        if (m_plane.m_rocs[i].m_Free == false) {
+            m_plane.m_rocs[i].updatePosition();
+        }
+    }
+
+    for (int i = 0; i < ROC_NUM; i++) {
+        //如果非空閒
+        if (m_plane.m_rocs2[i].m_Free == false) {
+            m_plane.m_rocs2[i].updatePosition();
         }
     }
 
@@ -112,6 +128,20 @@ void PLANEWAR::paintEvent(QPaintEvent*)
         //如果非空閒，繪製
         if (m_plane.m_bullets[i].m_Free == false) {
             painter.drawPixmap(m_plane.m_bullets[i].m_X, m_plane.m_bullets[i].m_Y, m_plane.m_bullets[i].m_Bullet);
+        }
+    }
+
+    for (int i = 0; i < ROC_NUM; i++) {
+        //如果非空閒，繪製
+        if (m_plane.m_rocs[i].m_Free == false) {
+            painter.drawPixmap(m_plane.m_rocs[i].m_X, m_plane.m_rocs[i].m_Y, m_plane.m_rocs[i].m_roc);
+        }
+    }
+
+    for (int i = 0; i < ROC_NUM; i++) {
+        //如果非空閒，繪製
+        if (m_plane.m_rocs2[i].m_Free == false) {
+            painter.drawPixmap(m_plane.m_rocs2[i].m_X, m_plane.m_rocs2[i].m_Y, m_plane.m_rocs2[i].m_roc2);
         }
     }
 
@@ -169,6 +199,56 @@ void PLANEWAR::collisionDetection()
             continue;
         }
 
+        for (int j = 0; j < ROC_NUM; j++) {
+            if (m_plane.m_rocs[j].m_Free) {
+                continue;
+            }
+            //飛機子彈皆非空閒
+            if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs[j].m_Rect)) {
+                m_enemys[i].m_Free = true;
+                m_plane.m_rocs[j].m_Free = true;
+
+                //播放爆炸效果
+                for (int k = 0; k < EXPLODE_NUM; k++) {
+                    if (m_bombs[k].m_Free) {
+
+                        QSound::play(SOUND_BOMB);
+
+                        m_bombs[k].m_Free = false;
+
+                        m_bombs[k].m_X = m_enemys[i].m_X;
+                        m_bombs[k].m_Y = m_enemys[i].m_Y;
+                        break;
+                    }
+                }
+            }
+        }
+
+        for (int j = 0; j < ROC_NUM; j++) {
+            if (m_plane.m_rocs2[j].m_Free) {
+                continue;
+            }
+            //飛機子彈皆非空閒
+            if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs2[j].m_Rect)) {
+                m_enemys[i].m_Free = true;
+                m_plane.m_rocs2[j].m_Free = true;
+
+                //播放爆炸效果
+                for (int k = 0; k < EXPLODE_NUM; k++) {
+                    if (m_bombs[k].m_Free) {
+
+                        QSound::play(SOUND_BOMB);
+
+                        m_bombs[k].m_Free = false;
+
+                        m_bombs[k].m_X = m_enemys[i].m_X;
+                        m_bombs[k].m_Y = m_enemys[i].m_Y;
+                        break;
+                    }
+                }
+            }
+        }
+
         for (int j = 0; j < BULLET_NUM; j++) {
             if (m_plane.m_bullets[j].m_Free) {
                 continue;
@@ -194,6 +274,4 @@ void PLANEWAR::collisionDetection()
             }
         }
     }
-
-
 }

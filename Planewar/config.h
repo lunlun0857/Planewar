@@ -4,7 +4,7 @@
 /************ﬂ[ëÚ≈‰÷√îµì˛************/
 #define GAME_WIDTH  512
 #define GAME_HEIGHT 768
-#define GAME_TITLE  "Plane war v1.0"
+#define GAME_TITLE  "Plane war"
 #define GAME_RES_PATH "./planee.rcc"
 #define GAME_ICON "D:/C++/Planewar/resor/pic.ico"
 #define GAME_RATE 10 //∫¡√Î
@@ -20,15 +20,21 @@
 
 /************◊”èó≈‰÷√îµì˛************/
 #define BULLET_PATH "D:/C++/Planewar/resor/bullet.png"
-#define BULLET_SPEED 5
+#define BULLET_SPEED 6
 #define BULLET_NUM 30
-#define BULLET_INTERVAL 20
+#define BULLET_INTERVAL 30
+
+/************ªº˝≈‰÷√îµì˛************/
+#define ROC_PATH "D:/C++/Planewar/resor/roc.png"
+#define ROC_SPEED 8
+#define ROC_NUM 10
+#define ROC_INTERVAL 150
 
 /************î≥ôC≈‰÷√îµì˛************/
 #define ENEMY_PATH "D:/C++/Planewar/resor/enemy1.png"
-#define ENEMY_SPEED 4
+#define ENEMY_SPEED 5
 #define ENEMY_NUM 20
-#define ENEMY_INTERVAL 25
+#define ENEMY_INTERVAL 20
 
 /************±¨’®≈‰÷√îµì˛************/
 #define EXPLODE_PATH "D:/C++/Planewar/resor/bomb-%1.png"
