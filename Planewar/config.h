@@ -22,19 +22,19 @@
 #define BULLET_PATH "D:/C++/Planewar/resor/bullet.png"
 #define BULLET_SPEED 6
 #define BULLET_NUM 30
-#define BULLET_INTERVAL 30
+#define BULLET_INTERVAL 10
 
 /************»ð¼ýÅäÖÃ”µ“þ************/
 #define ROC_PATH "D:/C++/Planewar/resor/roc.png"
 #define ROC_SPEED 8
 #define ROC_NUM 10
-#define ROC_INTERVAL 150
+#define ROC_INTERVAL 50
 
 /************”³™CÅäÖÃ”µ“þ************/
 #define ENEMY_PATH "D:/C++/Planewar/resor/enemy1.png"
 #define ENEMY_SPEED 5
 #define ENEMY_NUM 20
-#define ENEMY_INTERVAL 20
+#define ENEMY_INTERVAL 10
 
 /************±¬Õ¨ÅäÖÃ”µ“þ************/
 #define EXPLODE_PATH "D:/C++/Planewar/resor/bomb-%1.png"

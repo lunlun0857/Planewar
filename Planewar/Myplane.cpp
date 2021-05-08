@@ -65,7 +65,7 @@ void Myplane::shootr1() {
 			m_rocs[i].m_Free = false;
 
 			//ÔOÖÃ×Ó—×ù˜Ë
-			m_rocs[i].m_X = m_X + 10;
+			m_rocs[i].m_X = m_X;
 			m_rocs[i].m_Y = m_Y;
 			break;
 		}
@@ -93,7 +93,7 @@ void Myplane::shootr2() {
 			m_rocs[i].m_Free = false;
 
 			//ÔOÖÃ×Ó—×ù˜Ë
-			m_rocs[i].m_X = m_X + 80;
+			m_rocs[i].m_X = m_X + 100;
 			m_rocs[i].m_Y = m_Y;
 			break;
 		}
