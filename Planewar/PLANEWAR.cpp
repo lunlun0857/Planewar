@@ -18,7 +18,7 @@ PLANEWAR::PLANEWAR(QWidget *parent)
     //啟動遊戲
     playgame();
 
-    score = 0;
+    score = 0.3;
 }
 
 void PLANEWAR::initScene()
@@ -219,7 +219,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_rocs[j].m_Free = true;
-                score += 12.8;
+                score += 7.8;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {
@@ -245,7 +245,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs2[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_rocs2[j].m_Free = true;
-                score += 11.2;
+                score += 7.8;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {
@@ -271,7 +271,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_bullets[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_bullets[j].m_Free = true;
-                score += 3.8;
+                score += 6.8;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {
