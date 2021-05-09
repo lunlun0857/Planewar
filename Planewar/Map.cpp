@@ -6,6 +6,7 @@ Map::Map()
 	//初始化地圖加載對象
 	m_map1.load(MAP_PATH);
 	m_map2.load(MAP_PATH);
+	s_sco.load(SCORE);
 
 	//初始化Y軸座標
 	m_map1_posY = -GAME_HEIGHT;
@@ -13,6 +14,9 @@ Map::Map()
 
 	//地圖滾動速度
 	m_scroll_speed = MAP_SCROLL_SPEED;
+
+	s_sco_X = 350;
+	s_sco_Y = 0;
 }
 
 void Map::mapPosition()

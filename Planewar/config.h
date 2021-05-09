@@ -46,6 +46,6 @@
 #define SOUND_BG "D:/C++/Planewar/resor/GOLDEN WIND.wav"
 #define SOUND_BOMB "D:/C++/Planewar/resor/bomb.wav"
 
-
+#define SCORE "D:/C++/Planewar/resor/score.png"
 
 #endif // !CONFIG_H

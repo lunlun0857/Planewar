@@ -5,6 +5,8 @@
 #include <QMouseEvent>
 #include <ctime>
 #include <qsound.h>
+#include <qpen.h>
+#include <qbrush.h>
 
 
 PLANEWAR::PLANEWAR(QWidget *parent)
@@ -15,6 +17,8 @@ PLANEWAR::PLANEWAR(QWidget *parent)
 
     //啟動遊戲
     playgame();
+
+    score = 0;
 }
 
 void PLANEWAR::initScene()
@@ -123,6 +127,14 @@ void PLANEWAR::paintEvent(QPaintEvent*)
     //繪製英雄飛機
     painter.drawPixmap(m_plane.m_X, m_plane.m_Y, m_plane.m_Plane);
 
+    painter.drawPixmap(m_map.s_sco_X, m_map.s_sco_Y, m_map.s_sco);
+
+    QFont font1("Courier", 30, QFont::Bold, true);
+    painter.setFont(font1);
+    painter.setPen(QPen(Qt::yellow, 5, Qt::DashDotLine, Qt::RoundCap));
+    painter.drawText(400, 50, QString::number(score));
+
+
     //繪製子彈
     for (int i = 0; i < BULLET_NUM; i++) {
         //如果非空閒，繪製
@@ -207,6 +219,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_rocs[j].m_Free = true;
+                score += 12.8;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {
@@ -232,6 +245,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs2[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_rocs2[j].m_Free = true;
+                score += 11.2;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {
@@ -257,6 +271,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_bullets[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_bullets[j].m_Free = true;
+                score += 3.8;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {

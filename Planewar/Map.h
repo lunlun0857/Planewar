@@ -12,6 +12,7 @@ public:
 	//地圖圖片對象
 	QPixmap m_map1;
 	QPixmap m_map2;
+	QPixmap s_sco;
 
 	//地圖Y軸座標
 	int m_map1_posY;
@@ -19,6 +20,9 @@ public:
 
 	//地圖滾動幅度
 	int m_scroll_speed;
+
+	int s_sco_X;
+	int s_sco_Y;
 };
 
 #endif // Map.h
