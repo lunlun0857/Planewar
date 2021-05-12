@@ -8,7 +8,6 @@
 #include <qpen.h>
 #include <qbrush.h>
 
-
 PLANEWAR::PLANEWAR(QWidget *parent)
     : QWidget(parent)
 {
@@ -124,7 +123,7 @@ void PLANEWAR::paintEvent(QPaintEvent*)
     painter.drawPixmap(0, m_map.m_map1_posY, m_map.m_map1);
     painter.drawPixmap(0, m_map.m_map2_posY, m_map.m_map2);
 
-    //繪製英雄飛機
+    //繪製我機
     painter.drawPixmap(m_plane.m_X, m_plane.m_Y, m_plane.m_Plane);
 
     painter.drawPixmap(m_map.s_sco_X, m_map.s_sco_Y, m_map.s_sco);
@@ -132,7 +131,7 @@ void PLANEWAR::paintEvent(QPaintEvent*)
     QFont font1("Courier", 30, QFont::Bold, true);
     painter.setFont(font1);
     painter.setPen(QPen(Qt::yellow, 5, Qt::DashDotLine, Qt::RoundCap));
-    painter.drawText(400, 50, QString::number(score));
+    painter.drawText(395, 50, QString::number(score));
 
 
     //繪製子彈
@@ -219,7 +218,7 @@ void PLANEWAR::collisionDetection()
             if (m_enemys[i].m_Rect.intersects(m_plane.m_rocs[j].m_Rect)) {
                 m_enemys[i].m_Free = true;
                 m_plane.m_rocs[j].m_Free = true;
-                score += 7.8;
+                score += 8.7;
 
                 //播放爆炸效果
                 for (int k = 0; k < EXPLODE_NUM; k++) {
